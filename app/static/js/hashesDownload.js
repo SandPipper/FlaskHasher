@@ -6,7 +6,6 @@ $('#downloadBtn').on('click', function() {
         data.hashWord.push($(this).text().trim());
     });
 
-    console.log(data.hashWord)
     $('<a />', {
         "download": "hashes.json",
         "href": "data:application/json;charset=utf-8," +

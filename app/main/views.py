@@ -77,16 +77,8 @@ def profile():
 
     db.session.add(info)
     db.session.commit()
-    
+
     user = User.query.filter_by(id=current_user.id).first()
     hash_words = Vocabulary.query.filter_by(author_id=current_user.id).all()
     return render_template('profile.html', hash_words=hash_words,
                                            user=user)
-
-
-@main.route('/downloadHash')
-def downloadHash():
-    data = {'status': 0, 'message': None}
-    hash_words = Vocabulary.query.filter_by(author_id=current_user.id).all()
-
-    return jsonify(data)
