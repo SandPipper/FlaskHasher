@@ -10,7 +10,8 @@ Features:
 - Easy database migrations with Flask-Migrate
 - Flask-WTForms for validation of form
 - Unittest
-- CSS and JS minification using webpack
+- XML cast of database
+- JSON downloadig
 - gunicorn and nginx as server
 
 # Getting Started
