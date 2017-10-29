@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row main">
+        <div class="col-sm-4">
+<p>Hello, <em>{{ user.username }}!</em></p>
+<p>Your email is <em>{{ user.email }}</em></p>
+<p>Here you can see table with your hashes.</p>
+<p>And yes you can download it as <em>JSON file.</em></p>
+<button type="button" id="downloadBtn"
+ class="btn btn-primary btn-lg some-button">Download Hash
+</button>
+</div>
+<div class="col-md-8">
+    <table border="2px" class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    hash words
+                </th>
+            </tr>
+        </thead>
+        {% for word in hash_words %}
+        {% if word.hash_word != None %}
+
+        <tr>
+            <td class="hashes">
+                {{ word.hash_word }}
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

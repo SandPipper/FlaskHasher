@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+    <div class="row main">
+        <div class='col-sm-4'>
+            <div class="container">
+    <article>
+    <p>Hello, Stranger! Welcome to the <h1>Flask Hasher 3000!</h1>
+    Here you could have your personal <h3>vocabulary.</h3>
+    And also here you could <h3>hashing</h3>your words with six different <h3>hashing algorithms!</h3>
+    So all that you need for this is sign up or if you alerady have accaunt sign in.</p>
+    </article>
+</div>
+        </div>
+                <div class='col-md-8'>
+                <div class="panel-title text-center">
+                    <h1 class="title">Sign In</h1>
+                    <hr/>
+                </div>
+
+            <div class="main-form main-center">
+                <form id="SignInForm" class="form-horizontal" method="post">
+                    {{ signInForm.hidden_tag() }}
+
+                    <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">
+                        Your mail</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i
+                                class="fa fa-envelope fa" aria-hiden="true"></i>
+                            </span>
+                                {{ signInForm.email(class="form-control",
+                                   placeholder = "Enter your email") }}
+                        </div>
+                        {% for error in signInForm.email.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="cols-sm-2 control-label">
+                            Your password</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                        <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                    </span>
+                        {{ signInForm.password(class="form-control",
+                           placeholder = "Enter your password") }}
+                                </div>
+                                {% for error in signInForm.password.errors %}
+                                {{ error }}
+                                {% endfor %}
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        {{ signInForm.remember_me() }} Remember me
+                    </div>
+                    <div class="form-group">
+{{ signInForm.submitSignIn(class="btn btn-primary btn-lg btn-block some-button")}}
+
+                    </div>
+                </form>
+            </div>
+
+
+                <div class="panel-title text-center">
+                    <h1 class="title">Sign Up</h1>
+                    <hr/>
+                </div>
+
+            <div class="main-form main-center">
+                <form class="form-horizontal" method="post">
+                    {{ signUpForm.hidden_tag() }}
+                    <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">
+                        Your username</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i
+                                class="fa fa-user fa" aria-hiden="true"></i>
+                            </span>
+                            {{ signUpForm.username(class="form-control",
+                               placeholder = "Enter your username") }}
+                        </div>
+                        {% for error in signUpForm.username.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">
+                        Your mail</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i
+                                class="fa fa-envelope fa" aria-hiden="true"></i>
+                            </span>
+                            {{ signUpForm.email(class="form-control",
+                               placeholder = "Enter your email") }}
+
+                        </div>
+                        {% for error in signUpForm.email.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="cols-sm-2 control-label">
+                            Your password</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                        <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                                    </span>
+                        {{ signUpForm.password(class="form-control",
+                           placeholder = "Enter your password") }}
+                                </div>
+                                {% for error in signUpForm.password.errors %}
+                                {{ error }}
+                                {% endfor %}
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+						<label for="confirm" class="cols-sm-2 control-label">
+                                Confirm Password</label>
+						<div class="cols-sm-10">
+							<div class="input-group">
+								<span class="input-group-addon">
+                                    <i class="fa fa-lock fa-lg"
+                                       aria-hidden="true"></i></span>
+                                       {{ signUpForm.password2(class="form-control",
+                                          placeholder = "Confirm your password") }}
+							</div>
+                            {% for error in signUpForm.password.errors %}
+                            {{ error }}
+                            {% endfor %}
+						</div>
+					</div>
+
+                    <div class="form-group">
+{{ signUpForm.submitSignUp(class="btn btn-primary btn-lg btn-block some-button")}}
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
