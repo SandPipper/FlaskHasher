@@ -4,7 +4,7 @@ import os
 class Config:
 
     SECRET_KEY = os.environ["SECRET_KEY"]
-    MAIL_SUBJECT_PREFIX = "[Flask Hasher]"
+    MAIL_SUBJECT_PREFIX = ["Flask Hasher"]
     ADMIN = os.environ["ADMIN"]
     MAIL_SENDER = 'Flask Hasher {}'.format(ADMIN)
     SQLALCHEMY_DATABASE_URI = os.environ["DATABASE_URL"]

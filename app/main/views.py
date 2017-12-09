@@ -68,7 +68,6 @@ def profile():
     info = UserInfo.query.get(current_user.id)
     if info:
         info.ip = request.remote_addr
-        info.agent = str(request.cookies)
         info.cookies = str(request.cookies)
         info.agent = str(request.user_agent)
     else:
